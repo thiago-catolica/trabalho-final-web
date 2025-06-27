@@ -46,20 +46,24 @@
         <div class="login p-4 bg-white rounded shadow">
           <h2 class="text-center mb-2">Bem-Vindo!</h2>
           <p class="escola text-center">Escola Céu Azul</p>
-          <form action="/">
+          {{#erro}}
+            <div style="color: red;">Usuário ou senha inválidos.</div>
+          {{/erro}}
+          <form action="/login" method="POST">
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Digite seu email" required />
+              <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required />
             </div>
             <div class="mb-4">
               <label for="senha" class="form-label">Senha:</label>
-              <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required />
+              <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required />
             </div>
             <div class="d-grid">
               <button type="submit" class="btn btn-primary">Entrar</button>
             </div>
-            <p class="text-center mt-3"><a href="/recuperar_senha">Esqueceu a senha?</a></p>
+            <p class="text-center mt-3"><a href="/recuperar_senha">Redefinir Senha</a></p>
           </form>
+
         </div>
       </div>
 

@@ -44,7 +44,16 @@
         <div class="login p-4 bg-white rounded shadow">
           <h2 class="text-center mb-4">Alterar Senha</h2>
           <p class="text-center mb-3 escola">Escola Céu Azul</p>
-          <form action="/alterar-senha" method="POST">
+          {{#erro}}
+            <div style="color: red;">Usuário não encontrado.</div>
+          {{/erro}}
+          {{#sucesso}}
+            <div style="color: red;">Senha alterada com sucesso.</div>
+          {{/sucesso}}
+          {{#erro_banco}}
+            <div style="color: red;">Erro ao atualizar banco</div>
+          {{/erro_banco}}
+          <form action="/alterar_senha" method="POST">
             <div class="mb-3">
               <label for="email" class="form-label">Email cadastrado:</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required />
