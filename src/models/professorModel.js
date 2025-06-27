@@ -20,15 +20,19 @@ const professor = db.define('professor', {
         unique : true
     },
 
-    disciplina : {
-        type : Sequelize.ENUM('Português', 'Matemática', 'Ciências', 'História', 'Geografia'),
+    fk_disciplina : {
+        type : Sequelize.INTEGER,
+        references : {
+            model : 'disciplinas',
+            key : 'id_disciplina'
+        }
     },
 
     fk_usuario : {
         type : Sequelize.INTEGER,
 
         references : {
-            model : 'usuario',
+            model : 'usuarios',
             key : 'id_usuario'
         }
     }

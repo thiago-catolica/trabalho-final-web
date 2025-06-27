@@ -18,30 +18,10 @@ const aluno = db.define('aluno', {
         unique : true
     },
 
-    nota1 : {
-        type : Sequalize.FLOAT,
-        allowNull : true
-    },
-
-    nota2 : {
-        type : Sequalize.FLOAT,
-        allowNull : true
-    },
-
-    nota3 : {
-        type : Sequalize.FLOAT,
-        allowNull : true
-    },
-
-    nota4 : {
-        type : Sequalize.FLOAT,
-        allowNull : true
-    },
-
     fk_usuario : {
         type : Sequelize.INTEGER,
         references : {
-            model : 'usuario',
+            model : 'usuarios',
             key : 'id_usuario'
         }
     },
@@ -49,7 +29,7 @@ const aluno = db.define('aluno', {
     fk_turma : {
         type : Sequelize.INTEGER,
         references : {
-            model : 'turma',
+            model : 'turmas',
             key : 'id_turma'
         }
     }

@@ -16,7 +16,7 @@ const administrador = db.define('administrador', {
     fk_usuario : {
         type : Sequelize.INTEGER,
         references : {
-            model : 'usuario',
+            model : 'usuarios',
             key : 'id_usuario'
         }
     }
