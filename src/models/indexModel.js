@@ -53,6 +53,9 @@ disciplina.belongsToMany(aluno, {
   otherKey: 'fk_aluno'
 });
 
+
+
+
 module.exports = {
     sequelize,
     usuario,

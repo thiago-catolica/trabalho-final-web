@@ -20,8 +20,8 @@
       <div class="col-md-12">
         <div class="card text-bg-light shadow-sm">
           <div class="card-body d-flex justify-content-between">
-            <div><strong>Turma:</strong> 3º Ano B</div>
-            <div><strong>Matrícula:</strong> 202312345</div>
+            <div><strong>Turma:</strong> {{turma}}</div>
+            <div><strong>Matrícula:</strong> {{matricula}}</div>
           </div>
         </div>
       </div>
@@ -48,46 +48,16 @@
               </tr>
             </thead>
             <tbody>
+              {{#notas}}
               <tr>
-                <td>Matemática</td>
-                <td>7.0</td>
-                <td>8.0</td>
-                <td>6.5</td>
-                <td>7.2</td>
-                <td>7.5</td>
+                <td>{{disciplina}}</td>
+                <td>{{nota1}}</td>
+                <td>{{nota2}}</td>
+                <td>{{nota3}}</td>
+                <td>{{media}}</td>
+                <td>{{nota_final}}</td>
               </tr>
-              <tr>
-                <td>Português</td>
-                <td>6.5</td>
-                <td>7.0</td>
-                <td>6.0</td>
-                <td>6.5</td>
-                <td>7.0</td>
-              </tr>
-              <tr>
-                <td>História</td>
-                <td>8.0</td>
-                <td>8.5</td>
-                <td>9.0</td>
-                <td>8.5</td>
-                <td>9.0</td>
-              </tr>
-              <tr>
-                <td>Geografia</td>
-                <td>7.5</td>
-                <td>6.5</td>
-                <td>7.0</td>
-                <td>7.0</td>
-                <td>7.2</td>
-              </tr>
-              <tr>
-                <td>Ciências</td>
-                <td>9.0</td>
-                <td>8.0</td>
-                <td>8.5</td>
-                <td>8.5</td>
-                <td>9.0</td>
-              </tr>
+              {{/notas}}
             </tbody>
           </table>
         </div>

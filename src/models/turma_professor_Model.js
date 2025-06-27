@@ -20,7 +20,7 @@ const turma_professor = db.define('turma_professor', {
 
     fk_professor : {
         type : Sequelize.INTEGER,
-        onDelete : 'SET NULL',
+        onDelete : 'CASCADE',
         references : {
             model : 'professors',
             key : 'id_professor'

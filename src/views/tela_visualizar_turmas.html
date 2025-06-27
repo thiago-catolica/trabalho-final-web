@@ -16,56 +16,59 @@
 
   <div class="container py-4">
 
-    <!-- Informações do Professor -->
     <div class="row mb-4">
       <div class="col-md-12">
         <div class="card text-bg-light shadow-sm">
           <div class="card-body d-flex justify-content-between">
-            <div><strong>Professor:</strong> Ana Paula Fernandes</div>
-            <div><strong>Matrícula:</strong> PRF20231001</div>
+            <div><strong>Professor:</strong> {{nome}}</div>
+            <div><strong>Matrícula:</strong> {{matricula}}</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Lista de Turmas -->
-    <div class="d-flex flex-column gap-4">
+    {{#sucesso}}
+    <div class="alert alert-success" role="alert">
+      {{sucesso}}
+    </div>
+    {{/sucesso}}
 
-      <!-- Turma 1 -->
-      <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-          Turma: 3º Ano B - Disciplina: Matemática
-        </div>
-        <div class="card-body">
-          <h6>Alunos:</h6>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">João Silva</li>
-            <li class="list-group-item">Maria Oliveira</li>
-            <li class="list-group-item">Carlos Souza</li>
-            <li class="list-group-item">Fernanda Lima</li>
-            <li class="list-group-item">Lucas Martins</li>
-          </ul>
-        </div>
+    {{#erro}}
+    <div class="alert alert-danger" role="alert">
+      {{erro}}
+    </div>
+    {{/erro}}
+
+    <div class="card shadow-sm">
+      <div class="card-header bg-secondary text-white">
+        Turmas Vinculadas
       </div>
+      <div class="card-body">
+        {{#turmas.length}}
+        <table class="table table-bordered table-striped text-center align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>ID da Turma</th>
+              <th>Nome da Turma</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#turmas}}
+            <tr>
+              <td>{{id_turma}}</td>
+              <td>{{turma}}</td>
+            </tr>
+            {{/turmas}}
+          </tbody>
+        </table>
+        {{/turmas.length}}
 
-      <!-- Turma 2 -->
-      <div class="card shadow-sm">
-        <div class="card-header bg-success text-white">
-          Turma: 2º Ano A - Disciplina: Física
+        {{^turmas.length}}
+        <div class="text-center">
+          Nenhuma turma vinculada a este professor.
         </div>
-        <div class="card-body">
-          <h6>Alunos:</h6>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Beatriz Rocha</li>
-            <li class="list-group-item">Pedro Almeida</li>
-            <li class="list-group-item">Rafaela Torres</li>
-            <li class="list-group-item">Marcos Pinto</li>
-          </ul>
-        </div>
+        {{/turmas.length}}
       </div>
-
-      <!-- Adicione mais turmas conforme necessário -->
-
     </div>
 
   </div>

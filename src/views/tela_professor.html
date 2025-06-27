@@ -16,6 +16,18 @@
 
   <div class="container min-vh-100 d-flex flex-column align-items-center justify-content-center text-center py-5">
 
+    {{#sucesso}}
+    <div class="alert alert-success w-100 text-start" style="max-width: 600px;">
+      {{sucesso}}
+    </div>
+    {{/sucesso}}
+
+    {{#erro}}
+    <div class="alert alert-danger w-100 text-start" style="max-width: 600px;">
+      {{erro}}
+    </div>
+    {{/erro}}
+
     <img src="/img/imagem_professor.png" alt="Imagem Professor" class="img-fluid mb-4" style="max-width: 200px;">
 
     <div class="d-flex flex-column gap-3 w-100" style="max-width: 400px;">

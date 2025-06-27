@@ -10,19 +10,23 @@ function getRecuperarSenha(req, res){
 
 async function verificarLogin(req, res){
     
-    const tipo_usuario = await usuario.findOne({
+    const Usuario = await usuario.findOne({
         where : {
             email : req.body.email,
             senha : req.body.senha
         },
-        attributes : ['tipo_usuario']
+        attributes : ['tipo_usuario', 'email']
         });
 
 
-    if (tipo_usuario != null){
+    if (Usuario != null){
         console.log("Usuário Autenticado.");
 
-        const tipoUsuario = tipo_usuario.tipo_usuario;
+        req.session.autorizado = true;
+        req.session.email = Usuario.email;
+        req.session.tipoUsuario = Usuario.tipo_usuario;
+
+        const tipoUsuario = req.session.tipoUsuario;
 
         if (tipoUsuario == 'Administrador'){
             res.redirect ('/administrador');
