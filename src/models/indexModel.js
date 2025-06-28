@@ -6,7 +6,6 @@ const administrador = require('./administradorModel');
 const turma = require('./turmaModel');
 const turma_professor = require('./turma_professor_Model');
 const disciplina = require('./disciplinaModel.js');
-const nota = require ('./notaModel.js');
 
 usuario.hasOne(aluno, {foreignKey:'fk_usuario', onDelete:'CASCADE'});
 aluno.belongsTo(usuario, {foreignKey:'fk_usuario'});
@@ -41,20 +40,6 @@ disciplina.hasMany(professor, {foreignKey:'fk_disciplina', onDelete:'SET NULL'})
 professor.belongsTo(disciplina, {foreignKey:'fk_disciplina'});
 
 
-aluno.belongsToMany(disciplina, {
-  through: nota,
-  foreignKey: 'fk_aluno',
-  otherKey: 'fk_disciplina'
-});
-
-disciplina.belongsToMany(aluno, {
-  through: nota,
-  foreignKey: 'fk_disciplina',
-  otherKey: 'fk_aluno'
-});
-
-
-
 
 module.exports = {
     sequelize,
@@ -64,8 +49,7 @@ module.exports = {
     administrador,
     turma,
     turma_professor,
-    disciplina, 
-    nota
+    disciplina 
 };
 
 

@@ -75,7 +75,15 @@ async function recuperar_senha (req, res){
 }
 
 function logout(req,res){
+    req.session.autorizado = false;
+    res.redirect('/');
+}
 
+function verificarAutenticacao(req, res, next) {
+  if (req.session.autorizado !== true) {
+    return res.redirect('/'); 
+  }
+  next(); 
 }
 
 
@@ -85,5 +93,6 @@ module.exports = {
     getRecuperarSenha,
     recuperar_senha,
     verificarLogin,
-    logout
+    logout,
+    verificarAutenticacao
 };  
