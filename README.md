@@ -28,6 +28,12 @@ robusto.
 
 ============================================================================================
 
+COMO UTILIZAR : Primeiramente utilize o acesso 'admin@email.com.br' com a senha 'admin' para realizar o primeiro login. Após isso, navegue pela página do 
+administrador para inserir ou excluir contas de professores ou alunos. Por fim, logue com uma das contas listadas - de professor ou aluno - para acessar a 
+respectiva página.
+
+============================================================================================
+
 INTEGRANTES DO GRUPO : 
   -Thiago Castro Gonçalves
   -Gustavo Nunes Silva
